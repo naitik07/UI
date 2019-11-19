@@ -12,7 +12,7 @@ namespace App1
             public int Id { get; set; }
             public string Userid { get; set; }
             public string Password { get; set; }
-            
+                        
 
         }
 

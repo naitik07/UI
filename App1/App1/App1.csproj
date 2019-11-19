@@ -21,7 +21,7 @@
     <EmbeddedResource Update="Feed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Post.xaml">
+    <EmbeddedResource Update="RepFeed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="SignUp.xaml">

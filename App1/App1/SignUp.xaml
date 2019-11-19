@@ -17,8 +17,8 @@
 
         <Button Text="OK" TextColor="Black" Clicked="Ok_clicked" FontAttributes="Bold" FontSize="Large" 
                 HorizontalOptions="FillAndExpand"  />
-        <Button Text="Show" TextColor="Black" Clicked="Show_Clicked" FontAttributes="Bold" FontSize="Large" 
-                HorizontalOptions="FillAndExpand"  />
+        <!--<Button Text="Show" TextColor="Black" Clicked="Show_Clicked" FontAttributes="Bold" FontSize="Large" 
+                HorizontalOptions="FillAndExpand"  />-->
 
     </StackLayout>
 </ContentPage>

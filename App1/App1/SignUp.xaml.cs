@@ -54,16 +54,16 @@ namespace App1
 
         }
 
-        private void Show_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                Navigation.PushAsync(new DisplayPage()); //DisplayPage
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //private void Show_Clicked(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        Navigation.PushAsync(new DisplayPage()); //DisplayPage
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
     }
 }

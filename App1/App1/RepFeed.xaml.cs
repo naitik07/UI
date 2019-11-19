@@ -11,76 +11,44 @@ using Xamarin.Forms.Xaml;
 
 namespace App1
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    
-
-    public partial class Feed : TabbedPage
-
-    {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class RepFeed : TabbedPage
+    {  
         public SQLiteConnection conn;
         public Post_Data postmodel;
-     
 
-        public Feed()
+
+        public RepFeed()
         {
 
 
             InitializeComponent();
-            
-             conn = DependencyService.Get<Isqlite>().GetConnection();
+
+            conn = DependencyService.Get<Isqlite>().GetConnection();
             conn.CreateTable<Post_Data>();
             DisplayDetails();
 
             BindingContext = new Post_Data();
-                
+
         }
-        public  void DisplayDetails()
+
+        public void DisplayDetails()
         {
 
             var details = (from x in conn.Table<Post_Data>() select x).ToList();
             PostView.ItemsSource = details;
             ArchiveView.ItemsSource = details;
-        }
-        public async void Post_clicked(object sender, EventArgs e)
-        {
-
-
-            Post_Data pd = new Post_Data();
-
-            pd.Heading = Heading.Text;
-            pd.Post_Content = Post_Content.Text;
-
-            int x = 0;
-            try
-            {
-                x = conn.Insert(pd);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            if (x == 1)
-            {
-                await DisplayAlert("Alert", "Post Submitted", "OK");
-                await Navigation.PushAsync(new Feed());
-
-            }
-            else
-            {
-                await DisplayAlert("post Failled!!!", "Please try again", "ERROR");
-            }
-
 
         }
+
 
         public async void PostView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            
+
 
             var details = e.Item as Post_Data;
 
- 
+
 
             //conn.Table<Post_Data>().Delete(x => x.PostId == details.PostId);
 
@@ -88,16 +56,16 @@ namespace App1
 
             //await DisplayAlert(details.Heading, details.Post_Content, "Upvote");
 
-            await Navigation.PushAsync(new Viewposts(details.Heading,details.Post_Content));
+            await Navigation.PushAsync(new Viewposts(details.Heading, details.Post_Content));
 
             //await PopupNavigation.PushAsync(new Demo(details.Heading, details.Post_Content));
         }
 
-        public  async void PostView_ItemTapped_U(object sender, ItemTappedEventArgs e)
+        public async void PostView_ItemTapped_U(object sender, ItemTappedEventArgs e)
         {
             var details_U = e.Item as Post_Data;
             var result = await DisplayAlert("Choose your Action", "", "View Full Post", "Delete Post");
-            if (result==true)
+            if (result == true)
             {
                 await Navigation.PushAsync(new Viewposts(details_U.Heading, details_U.Post_Content, details_U));
             }
@@ -106,10 +74,14 @@ namespace App1
                 conn.Table<Post_Data>().Delete(x => x.PostId == details_U.PostId);
             }
 
-            
+
 
         }
-      
+
+        private void Send_clicked(object sender, EventArgs e)
+        {
+             DisplayAlert("Email", "Email Send", "OK");
+        }
     }
- 
+
 }

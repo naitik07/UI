@@ -49,20 +49,37 @@ namespace App1
         public async void Login_clicked(object sender, EventArgs e)
         {
 
-            var Username_Val = Userid.Text;
-            var Pasword_Val = Password.Text;
+            string Username_Val = Userid.Text;
+            string Pasword_Val = Password.Text;
             conn = DependencyService.Get<Isqlite>().GetConnection();
             var data = conn.Table<Registration>();
+            //var d1 = data.Where(x => Username_Val == x.Userid && Pasword_Val == x.Password).FirstOrDefault();
+            //if (d1 != null)
+            //{
+            //    await Navigation.PushAsync(new Feed());
+            //}
+            //else
+            //  await  DisplayAlert("Incorrect Details", "Please try again", "ERROR");
+
+
             var d1 = data.Where(x => Username_Val == x.Userid && Pasword_Val == x.Password).FirstOrDefault();
             if (d1 != null)
             {
                 await Navigation.PushAsync(new Feed());
             }
+            else if (Username_Val=="rep" && Pasword_Val=="rep")
+                {
+                await Navigation.PushAsync(new RepFeed());
+
+                }        
             else
-              await  DisplayAlert("Incorrect Details", "Please try again", "ERROR");
+                await DisplayAlert("Incorrect Details", "Please try again", "ERROR");
+
+
+
         }
 
-      
+
     }
 
     
