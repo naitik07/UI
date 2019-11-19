@@ -101,9 +101,13 @@ namespace App1
             {
                 await Navigation.PushAsync(new Viewposts(details_U.Heading, details_U.Post_Content, details_U));
             }
-            else
+            else if (result ==false)
             {
                 conn.Table<Post_Data>().Delete(x => x.PostId == details_U.PostId);
+            }
+            else
+            {
+                return;
             }
 
             

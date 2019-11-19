@@ -24,7 +24,6 @@
 
                                 <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Image Source="upvote.png" HeightRequest="40" WidthRequest="40"/>
-
                                     <Label x:Name="Upvote_Label"  Text="{Binding Upvotes}" HorizontalTextAlignment="Center" FontSize="Micro" FontAttributes="Bold"/>
                                 </StackLayout>
                             </Grid>
@@ -36,13 +35,10 @@
 
     </ContentPage>
 
-
-
-
-    <ContentPage Title="SenEmail">
+    <ContentPage Title="Send Email">
         <StackLayout>
 
-            <Label Text="Have your Say" Grid.Row="0" FontSize="20" VerticalTextAlignment= "Center" TextDecorations="Underline" TextColor="Black" FontFamily="ovo" BackgroundColor="White" HorizontalTextAlignment="Center"/>
+            <Label Text="Send Email" Grid.Row="0" FontSize="20" VerticalTextAlignment= "Center" TextDecorations="Underline" TextColor="Black" FontFamily="ovo" BackgroundColor="White" HorizontalTextAlignment="Center"/>
             <Entry x:Name="Heading"  Placeholder="Email Address"   
                            PlaceholderColor="Gray" HeightRequest="40"  TextColor="Black"/>
 
