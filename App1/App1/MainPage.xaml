@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage">
+
+    <StackLayout MinimumHeightRequest="100" MinimumWidthRequest="300" Grid.Column="0" >
+
+        <Image Source="title.png" WidthRequest="270" HeightRequest="300" Aspect="Fill" Margin="10,20,10,20"/>
+
+        <Entry x:Name="Userid"  Placeholder="Enter Your UserId"   
+                           PlaceholderColor="Gray" HeightRequest="40" TextColor="Black"/>
+
+        <Entry x:Name="Password"  Placeholder="Enter Your Password"   
+                           PlaceholderColor="Gray" HeightRequest="40" IsPassword="True" TextColor="Black"/>
+        <Button x:Name="Login" Text="Login" TextColor="Black" Clicked="Login_clicked" FontAttributes="Bold" FontSize="Large" BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"  />
+        <Button x:Name="SignUp" Text="SignUp" TextColor="Black" Clicked="SignUp_clicked" FontAttributes="Bold" FontSize="Large" BackgroundColor="White"
+                HorizontalOptions="FillAndExpand"  />
+
+
+
+    </StackLayout>
+
+</ContentPage>

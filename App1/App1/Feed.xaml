@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Feed">
+    <ContentPage Title="Feed">
+       
+
+            <StackLayout>
+            <StackLayout Orientation="Horizontal">
+
+                <ListView x:Name="PostView" HasUnevenRows="True" ItemTapped="PostView_ItemTapped">
+                        <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                
+                                
+                                        <Grid RowSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="90"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="50" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                              
+                                    <Label Text="{Binding Heading}" FontSize="Small" VerticalTextAlignment="Center" />
+
+
+                                   
+                                    <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                                        <Image Source="upvote.png" HeightRequest="40" WidthRequest="40"/>
+                                        
+                                        <Label x:Name="Upvote_Label"  Text="{Binding Upvotes}" HorizontalTextAlignment="Center" FontSize="Micro" FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                </Grid>
+                                    
+                            </ViewCell>
+                        </DataTemplate>
+
+                      
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+            </StackLayout>
+
+          
+    </ContentPage>
+    
+    
+    
+    
+    <ContentPage Title="Write">
+        <StackLayout>
+        
+            <Label Text="Have your Say" Grid.Row="0" FontSize="20" VerticalTextAlignment= "Center" TextDecorations="Underline" TextColor="Black" FontFamily="ovo" BackgroundColor="White" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="Heading" Text="{Binding Heading}" Placeholder="Heading.."   
+                           PlaceholderColor="Gray" HeightRequest="40"  TextColor="Black"/>
+
+
+            <Entry x:Name="Post_Content" Text="{Binding Post_Content }" Placeholder="Type your Message"   
+                           PlaceholderColor="Gray" HeightRequest="40"  TextColor="Black"/>
+            
+            <Button Text="Post" TextColor="Black" Clicked="Post_clicked" FontAttributes="Bold" FontSize="Large" 
+                HorizontalOptions="FillAndExpand"  />
+
+        </StackLayout>
+
+    </ContentPage>
+
+    <ContentPage Title="Archive">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <!--<ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />-->
+
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="What they are saying" Grid.Row="0" FontSize="20" VerticalTextAlignment= "Center" TextDecorations="Underline" TextColor="Black" FontFamily="ovo" BackgroundColor="White" HorizontalTextAlignment="Center"/>
+            <StackLayout Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" >
+                <Label Text="Heading(Replied) " />
+                <Label Text="post content"  />
+                <!--<Button Text=" see more" x:Name="seemore1" Clicked="seemore1_Clicked" TextColor="red" BackgroundColor="White"></Button>-->
+            </StackLayout>
+            <ImageButton Source="Assets/upvote.png" x:Name="upvote1"  Grid.Row="1" Grid.Column="1" BackgroundColor="White" HorizontalOptions="End" />
+
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.RowSpan="4" >
+                <Label Text="Heading(Replied) " />
+                <Label Text="post content"  />
+                <!--<Button Text=" see more" x:Name="seemore2" Clicked="seemore2_Clicked" TextColor="red" BackgroundColor="White"></Button>-->
+            </StackLayout>
+            <ImageButton Source="Assets/upvote.png" x:Name="upvote2"  Grid.Row="2" Grid.Column="1" BackgroundColor="White" HorizontalOptions="End" />
+
+            <StackLayout Grid.Row="3" Grid.Column="0" Grid.RowSpan="4" >
+                <Label Text="Heading(Replied) " />
+                <Label Text="post content"  />
+                <!--<Button Text=" see more" x:Name="seemore3" Clicked="seemore3_Clicked" TextColor="red" BackgroundColor="White"></Button>-->
+            </StackLayout>
+            <ImageButton Source="Assets/upvote.png" x:Name="upvote3" Grid.Row="3" Grid.Column="1" BackgroundColor="White" HorizontalOptions="End" />
+
+        </Grid>
+    </ContentPage>
+</TabbedPage>

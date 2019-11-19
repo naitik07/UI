@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.SignUp">
+    <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+        <BoxView HeightRequest="10"/>
+
+        <Entry x:Name="Userid" Text="{Binding Userid}" Placeholder="Enter a Userid"   
+                           PlaceholderColor="Gray" HeightRequest="40"  TextColor="Black"/>
+
+
+        <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Choose a Password"   
+                           PlaceholderColor="Gray" HeightRequest="40" IsPassword="True" TextColor="Black"/>
+
+        <Entry x:Name="RePassword" Text="{Binding Password}" Placeholder="Confirm the Password"   
+                           PlaceholderColor="Gray" HeightRequest="40" IsPassword="True" TextColor="Black"/>
+
+        <Button Text="OK" TextColor="Black" Clicked="Ok_clicked" FontAttributes="Bold" FontSize="Large" 
+                HorizontalOptions="FillAndExpand"  />
+        <Button Text="Show" TextColor="Black" Clicked="Show_Clicked" FontAttributes="Bold" FontSize="Large" 
+                HorizontalOptions="FillAndExpand"  />
+
+    </StackLayout>
+</ContentPage>
