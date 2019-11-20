@@ -100,10 +100,13 @@ namespace App1
             if (result==true)
             {
                 await Navigation.PushAsync(new Viewposts(details_U.Heading, details_U.Post_Content, details_U));
+
             }
             else if (result ==false)
             {
+                 await DisplayAlert("Alert", "Post Deleted", "OK");
                 conn.Table<Post_Data>().Delete(x => x.PostId == details_U.PostId);
+                
             }
             else
             {
@@ -113,7 +116,11 @@ namespace App1
             
 
         }
-      
+
+        //private async void Back_clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PopAsync();
+        //}
     }
  
 }

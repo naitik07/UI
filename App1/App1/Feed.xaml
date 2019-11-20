@@ -88,7 +88,8 @@
                                         <Image Source="upvote.png" HeightRequest="40" WidthRequest="40"/>
 
                                         <Label x:Name="Upvote_Label"  Text="{Binding Upvotes}" HorizontalTextAlignment="Center" FontSize="Micro" FontAttributes="Bold"/>
-                                    </StackLayout>
+                                    <!--<Button Text="Back" TextColor="Black" Clicked="Back_clicked" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" />-->
+                                </StackLayout>
 
                                 </Grid>
 

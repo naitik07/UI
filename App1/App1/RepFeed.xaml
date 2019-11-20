@@ -38,13 +38,13 @@
     <ContentPage Title="Send Email">
         <StackLayout>
 
-            <Label Text="Send Email" Grid.Row="0" FontSize="20" VerticalTextAlignment= "Center" TextDecorations="Underline" TextColor="Black" FontFamily="ovo" BackgroundColor="White" HorizontalTextAlignment="Center"/>
+            <Label Text="Contact Your Tutor" Grid.Row="0" FontSize="20" VerticalTextAlignment= "Center" TextDecorations="Underline" TextColor="Black" FontFamily="ovo" BackgroundColor="White" HorizontalTextAlignment="Center"/>
             <Entry x:Name="Heading"  Placeholder="Email Address"   
                            PlaceholderColor="Gray" HeightRequest="40"  TextColor="Black"/>
 
 
             <Entry x:Name="Post_Content"  Placeholder="Type your Message"   
-                           PlaceholderColor="Gray" HeightRequest="40"  TextColor="Black"/>
+                           PlaceholderColor="Gray" HeightRequest="80"  TextColor="Black"/>
 
             <Button Text="Send" TextColor="Black" Clicked="Send_clicked" FontAttributes="Bold" FontSize="Large" 
                 HorizontalOptions="FillAndExpand" />
